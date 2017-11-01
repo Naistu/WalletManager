@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button span-start (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios,android">Cancelar</span>
+<!--        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>-->
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Complete los datos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+   <form [formGroup]="myForm" (ngSubmit)="saveData()">
+    <ion-list>
+      <ion-row radio-group nowrap formControlName="tipo">
+        <ion-item>
+<!--          <ion-icon name="add" item-left></ion-icon>-->
+          <ion-label>Ganancia</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+        <ion-item>
+<!--          <ion-icon name="close" item-left></ion-icon>-->
+          <ion-label>Gasto</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      </ion-row>
+      <ion-item>
+        <ion-icon name="person" item-left></ion-icon>
+        <ion-label floating>Cantidad</ion-label>
+        <ion-input formControlName="cant" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person" item-left></ion-icon>
+        <ion-label floating>Nota</ion-label>
+        <ion-input formControlName="causa" type="text" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="calendar" item-left></ion-icon>
+        <ion-label floating>Fecha</ion-label>
+        <ion-datetime formControlName="dateHappend" displayFormat="DD-MM-YYYY"></ion-datetime>
+      </ion-item>
+            <ion-item padding >
+        <ion-icon name="person" item-left></ion-icon>
+        <ion-label>Categoria</ion-label>
+        <ion-select formControlName="categoria">
+          <ion-option value="1">Comida</ion-option>
+          <ion-option value="2">Trabajo</ion-option>
+          <ion-option value="3">Ropa</ion-option>
+          <ion-option value="4">Alchol</ion-option>
+          <ion-option value="5">Otros</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!myForm.valid" (click)="showToast('bottom')" (click)="dismiss()">Agregar</button>
+    </div>
+  </form>
+</ion-content>
