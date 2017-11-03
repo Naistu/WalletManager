@@ -68,6 +68,7 @@ export class ModalPage {
 		});
 		console.log(this.objeto);
 		
+		
 	}
 
 	ionViewWillLoad() {

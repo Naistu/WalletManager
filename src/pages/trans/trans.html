@@ -16,21 +16,28 @@
   <ion-card *ngFor="let info of arrayGasto">
     <ion-item>
       <ion-avatar item-start>
-        <img src="assets/imgs/ganancia.png">
+        <img src="assets/imgs/plus.svg">
       </ion-avatar>
-      <h2>{{info.cant}}</h2>
-      <p>{{info.dateHappend}}</p>
+      <h2>{{info.categoria}}</h2>
+      <p>${{info.cant}}</p>
     </ion-item>
 
-    <img src="assets/imgs/elpipa.jpg"/>
+<!--    <img src="assets/imgs/elpipa.jpg"/>-->
 
     <ion-card-content>
-      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      <p>{{info.causa}}</p>
     </ion-card-content>
+    <ion-row>
+      <ion-col center text-center>
+        <ion-note>
+          {{info.dateHappend}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
   </ion-card>
 
   <ion-fab right bottom>
-    <button ion-fab (click)="openModal()"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab (click)="openModal()"><ion-icon name="open"></ion-icon></button>
   </ion-fab>
 
 </ion-content>
