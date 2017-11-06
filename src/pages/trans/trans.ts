@@ -20,11 +20,12 @@ export class TransPage {
   arrayGanancia= [];
   //  arrayGasto: Array<any>;
   arrayGasto= [];
+  arrayTodos = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,private modal: ModalController, public storage: Storage) {
-    //storage.clear()
+//    storage.clear()
     this.getData()
-    console.log(this.arrayGasto);
+    console.log(this.arrayTodos);
     console.log(this.arrayGanancia);
   }
   
@@ -69,12 +70,13 @@ export class TransPage {
       for(let i of arrayDeKeys){
         this.storage.get(i).then((pepe) => {
           let obj = JSON.parse(pepe);
-          if(obj.tipo == "1"){
-            this.arrayGanancia.push(obj);
-          } else {
-            this.arrayGasto.push(obj);
-            console.log();
-          }
+//          if(obj.tipo == "1"){
+//            this.arrayGanancia.push(obj);
+//          } else {
+//            this.arrayGasto.push(obj);
+//          }
+          this.arrayTodos.push(obj);
+          console.log();
         });
       }
     });

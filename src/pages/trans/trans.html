@@ -1,11 +1,11 @@
 
 <ion-header>
-  <ion-toolbar color="light">
+  <ion-toolbar color="primary">
     <button ion-button menuToggle (click)="openFilter()">
       <ion-icon ios="ios-funnel" md="md-funnel"></ion-icon>
       <!--        name = "options"-->
     </button>
-    <ion-title>Category</ion-title>
+    <ion-title>Mis transacciones</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +13,7 @@
 <ion-content padding>
 
   <!-- trajetas de transacciones-->
-  <ion-card *ngFor="let info of arrayGasto">
+  <ion-card *ngFor="let info of arrayTodos">
     <ion-item>
       <ion-avatar item-start>
         <img src="assets/imgs/plus.svg">
@@ -37,7 +37,7 @@
   </ion-card>
 
   <ion-fab right bottom>
-    <button ion-fab (click)="openModal()"><ion-icon name="open"></ion-icon></button>
+    <button ion-fab  color="fab" (click)="openModal()"><ion-icon name="open"></ion-icon></button>
   </ion-fab>
 
 </ion-content>

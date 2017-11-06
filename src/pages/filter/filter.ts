@@ -42,6 +42,8 @@ export class FilterPage {
     this.filter.categoria = this.myForm.get('categoria').value;
     console.log(this.filter);
   }
+  
+  public rangeObject:any= {lower: 0, upper: 100};
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FilterPage');

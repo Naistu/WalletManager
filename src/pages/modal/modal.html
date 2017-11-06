@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons start>
       <button ion-button span-start (click)="dismiss()">
-        <span ion-text color="primary" showWhen="ios,android">Cancelar</span>
+        <span ion-text color="can" showWhen="ios,android">Cancelar</span>
 <!--        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>-->
       </button>
     </ion-buttons>
@@ -28,12 +28,12 @@
         </ion-item>
       </ion-row>
       <ion-item>
-        <ion-icon name="person" item-left></ion-icon>
+        <ion-icon name="cash" item-left></ion-icon>
         <ion-label floating>Cantidad</ion-label>
         <ion-input formControlName="cant" type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-icon name="person" item-left></ion-icon>
+        <ion-icon name="create" item-left></ion-icon>
         <ion-label floating>Nota</ion-label>
         <ion-input formControlName="causa" type="text" ></ion-input>
       </ion-item>
@@ -43,7 +43,7 @@
         <ion-datetime formControlName="dateHappend" displayFormat="DD-MM-YYYY"></ion-datetime>
       </ion-item>
             <ion-item padding >
-        <ion-icon name="person" item-left></ion-icon>
+        <ion-icon name="options" item-left></ion-icon>
         <ion-label>Categoria</ion-label>
         <ion-select formControlName="categoria">
           <ion-option value="Comida">Comida</ion-option>
