@@ -18,7 +18,7 @@ export class ModalPage {
 	myForm: FormGroup;
 	// revisar como crear un objeto
 	objeto = {
-		cant: String,
+		cant: Number,
 		causa: String,
 		dateHappend: String,
 		tipo: String,

@@ -17,16 +17,12 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'trans.html',
 })
 export class TransPage {
-  arrayGanancia= [];
-  //  arrayGasto: Array<any>;
-  arrayGasto= [];
   arrayTodos = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,private modal: ModalController, public storage: Storage) {
 //    storage.clear()
     this.getData()
-    console.log(this.arrayTodos);
-    console.log(this.arrayGanancia);
+    console.log(this.arrayTodos); 
   }
   
 
@@ -70,11 +66,6 @@ export class TransPage {
       for(let i of arrayDeKeys){
         this.storage.get(i).then((pepe) => {
           let obj = JSON.parse(pepe);
-//          if(obj.tipo == "1"){
-//            this.arrayGanancia.push(obj);
-//          } else {
-//            this.arrayGasto.push(obj);
-//          }
           this.arrayTodos.push(obj);
           console.log();
         });
