@@ -16,13 +16,13 @@
   <ion-card *ngFor="let info of arrayTodos">
     <ion-item>
       <ion-avatar item-start>
-        <img src="assets/imgs/plus.svg">
+        <img src="assets/imgs/{{info?.tipo}}.png">
       </ion-avatar>
       <h2>{{info.categoria}}</h2>
       <p>${{info.cant}}</p>
     </ion-item>
 
-<!--    <img src="assets/imgs/elpipa.jpg"/>-->
+
 
     <ion-card-content>
       <p>{{info.causa}}</p>
@@ -32,7 +32,14 @@
         <ion-note>
           {{info.dateHappend}}
         </ion-note>
-      </ion-col>
+        </ion-col>
+    <ion-col>
+    <ion-item>
+      <button ion-button icon-left clear item-end (click)="deleteItem()">
+        <ion-icon ios="ios-trash" md="md-trash" style="color:red;"></ion-icon>
+      </button>
+    </ion-item>
+    </ion-col>
     </ion-row>
   </ion-card>
 

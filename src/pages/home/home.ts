@@ -22,7 +22,7 @@ export class HomePage {
   public doughnutChartType:string = 'doughnut';
   public chartColors: any[] = [
       { 
-        backgroundColor:["#f8bbd0","#b2dfdb"], 
+        backgroundColor:["#F44336","#00bf9a"], 
       }];
 
   // Bar Chartt
