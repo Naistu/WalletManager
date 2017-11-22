@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, Modal, ModalController, ModalOptio
 import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
 import { ViewController } from 'ionic-angular';
-
+import { HomePage } from '../home/home';
 
 
 /**
@@ -20,14 +20,15 @@ import { ViewController } from 'ionic-angular';
 })
 export class TransPage {
   arrayTodos = [];
-  //objeto: any;
+  objeto: any;
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,private modal: ModalController, public storage: Storage, public alertCtrl: AlertController, public viewCtrl: ViewController) {
     // storage.clear()
     this.getData()
     console.log(this.arrayTodos); 
-//    this.objeto = navParams.data;
-//    this.objeto  = navParams.get('id');
+    //    this.objeto = navParams.data;
+    //    this.objeto  = navParams.get('id');
   }
 
 
@@ -45,7 +46,8 @@ export class TransPage {
       console.log("volvemos a trans");
       console.log(data);
       // recargame la pagina
-      this.navCtrl.setRoot(TransPage); 
+      this.navCtrl.setRoot(this.navCtrl.getActive().component);
+      this.navCtrl.setRoot(HomePage); 
       this.navCtrl.popToRoot();
     }); 
   }
@@ -65,7 +67,7 @@ export class TransPage {
       console.log(data);  
     });
   }
-  
+
   async getData() {
     this.storage.keys().then((arrayDeKeys) => {
       console.log(arrayDeKeys); 
@@ -79,11 +81,10 @@ export class TransPage {
     });
   }
 
-  deleteItem() {
-    // let key = ""+this.objeto.id;
-    // this.storage.remove(key);
-//    this.navCtrl.setRoot(TransPage); 
-//    this.navCtrl.popToRoot();  
+  deleteItem($event, info) {
+    let key = ""+this.info.id;
+    this.storage.remove(key);
+
     let alert = this.alertCtrl.create({
       title: 'Transaccion eliminada!',
       subTitle: 'Esta transaccion no estara mas dentro de tu Wallet Manager!',

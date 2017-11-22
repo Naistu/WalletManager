@@ -17,7 +17,7 @@ export class HomePage {
 
   }
   // Doughnut  
-  public doughnutChartLabels:string[] = ['Ganancias', 'Gastos'];
+  public doughnutChartLabels:string[] = ['Gastos', 'Ganancia'];
   public doughnutChartData:Array<any> = []
   public doughnutChartType:string = 'doughnut';
   public chartColors: any[] = [
