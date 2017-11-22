@@ -7,11 +7,10 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  arrayGanancia= [];
-  arrayGasto= [];
   public contGanancia : number = 0;
   public contGasto : number = 0;
-
+  public balance : number = 0;
+ 
   constructor(public storage: Storage) {
     this.dataTake()
 
@@ -22,24 +21,10 @@ export class HomePage {
   public doughnutChartType:string = 'doughnut';
   public chartColors: any[] = [
       { 
-        backgroundColor:["#F44336","#00bf9a"], 
+        backgroundColor:["#ff5252","#66bb6a"], 
       }];
 
-  // Bar Chartt
-  public barChartOptions:any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-  public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  public barChartType:string = 'bar';
-  public barChartLegend:boolean = true;
-
-  public barChartData:any[] = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Ganancias'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Gastos'}
-  ];
-
-  // events
+   // events
   public chartClicked(e:any):void {
     console.log(e);
   }
@@ -47,7 +32,6 @@ export class HomePage {
   public chartHovered(e:any):void {
     console.log(e);
   }
-
 
   dataTake() {
     this.storage.keys().then((arrayDeKeys) => {
@@ -65,39 +49,12 @@ export class HomePage {
           this.doughnutChartData = [
             {data: [this.contGasto, this.contGanancia]}
           ];
+          this.balance = this.contGanancia - this.contGasto;
+          console.log(this.balance);
         });
       } 
       console.log(this.doughnutChartData);
     });
 
   }  
-
-  public randomize():void {
-    // Only Change 3 values
-    let data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      (Math.random() * 100),
-      56,
-      (Math.random() * 100),
-      40];
-    let clone = JSON.parse(JSON.stringify(this.barChartData));
-    clone[0].data = data;
-    this.barChartData = clone;
-  }  
-
-  //  // events
-  //public chartClicked(e:any):void {
-  //  console.log(e);
-  //}
-  //
-  //public chartHovered(e:any):void {
-  //  console.log(e);
-  //}
-  //  constructor(public navCtrl: NavController) {
-  //  
-  //
-  //  }
-
 }

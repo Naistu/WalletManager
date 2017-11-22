@@ -80,18 +80,5 @@ export class TransPage {
       }
     });
   }
-
-  deleteItem($event, info) {
-    let key = ""+this.info.id;
-    this.storage.remove(key);
-
-    let alert = this.alertCtrl.create({
-      title: 'Transaccion eliminada!',
-      subTitle: 'Esta transaccion no estara mas dentro de tu Wallet Manager!',
-      buttons: ['OK']
-    });
-    alert.present();
-    this.viewCtrl.dismiss();
-  }
 }
 

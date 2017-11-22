@@ -9,25 +9,35 @@
 <ion-content>
   <div style="display: block ;margin-top:5% ; align:center">
     <canvas baseChart
-                [data]="doughnutChartData"
-                [labels]="doughnutChartLabels"
-                [chartType]="doughnutChartType"
-                [colors]="chartColors"
-                (chartHover)="chartHovered($event)"
-                (chartClick)="chartClicked($event)"></canvas>
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType"
+            [colors]="chartColors"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
   </div>
- <div>
-    <div style="display: block; margin-top:20% ; padding:2%; position: relative;">
-      <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [legend]="barChartLegend"
-              [chartType]="barChartType"
-              (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)"></canvas>
-    </div>
-    <button ion-button (click)="randomize()" style= "margin-left:40%
-  " >Cambiar</button>
+  <div style="padding-top: : 5px">
+    <ion-card>
+      <ion-card-header>
+        Balance total
+      </ion-card-header>
+      <ion-list>
+        <ion-item color= "#66bb6a" id="messi">
+          Dinero ganado:<br>
+          $ {{contGanancia}}
+        </ion-item>
+        <ion-item right text-color= "#66bb6a">
+          <ion-icon name="add" item-right></ion-icon>
+        </ion-item>
+        <ion-item text-color= "#66bb6a">
+          Dinero gastado:<br>
+          $ {{contGasto}}
+        </ion-item>
+        <ion-item text-color= "#66bb6a">
+          Estado de tu billetera:<br>
+          $ {{balance}}
+        </ion-item>
+      </ion-list>
+    </ion-card>
   </div>
 </ion-content>

@@ -1,10 +1,6 @@
 
 <ion-header>
   <ion-toolbar color="primary">
-    <button ion-button icon-right menuToggle (click)="openFilter()">
-      <ion-icon ios="ios-funnel" md="md-funnel"></ion-icon>
-      <!--        name = "options"-->
-    </button>
     <ion-title>Mis transacciones</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -32,11 +28,6 @@
         <ion-note>
           {{info.dateHappend}}
         </ion-note>
-        <ion-item>
-          <button ion-button icon-left clear item-end (click)="deleteItem(event, info)">
-            <ion-icon ios="ios-trash" md="md-trash" style="color:red;"></ion-icon>
-          </button>
-        </ion-item>
       </ion-col>
     </ion-row>
   </ion-card>
