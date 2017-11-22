@@ -18,23 +18,23 @@
   </div>
   <div style="padding-top: : 5px">
     <ion-card>
-      <ion-card-header>
+      <ion-card-header class="my-card">
         Balance total
       </ion-card-header>
       <ion-list>
-        <ion-item color= "#66bb6a" id="messi">
-          Dinero ganado:<br>
+        <ion-item class="ganancia">
+          <p >Dinero ganado:</p>
           $ {{contGanancia}}
         </ion-item>
-        <ion-item right text-color= "#66bb6a">
-          <ion-icon name="add" item-right></ion-icon>
+        <ion-item right>
+          <ion-icon name="remove" item-right></ion-icon>
         </ion-item>
-        <ion-item text-color= "#66bb6a">
-          Dinero gastado:<br>
+        <ion-item class="gasto">
+          <p>Dinero gastado:</p>
           $ {{contGasto}}
         </ion-item>
-        <ion-item text-color= "#66bb6a">
-          Estado de tu billetera:<br>
+        <ion-item>
+          <p>Estado de tu billetera:</p>
           $ {{balance}}
         </ion-item>
       </ion-list>
