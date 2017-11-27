@@ -47,8 +47,8 @@ export class TransPage {
       console.log(data);
       // recargame la pagina
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
-      this.navCtrl.setRoot(HomePage); 
-      this.navCtrl.popToRoot();
+      //this.navCtrl.setRoot(HomePage); 
+//      this.navCtrl.popToRoot();
     }); 
   }
 

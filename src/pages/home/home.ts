@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-//import { NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -11,7 +11,7 @@ export class HomePage {
   public contGasto : number = 0;
   public balance : number = 0;
  
-  constructor(public storage: Storage) {
+  constructor(public navCtrl: NavController,public storage: Storage) {
     this.dataTake()
 
   }
@@ -31,6 +31,17 @@ export class HomePage {
 
   public chartHovered(e:any):void {
     console.log(e);
+  }
+  
+  doRefresh(refresher) {
+    this.navCtrl.setRoot(HomePage); 
+    this.navCtrl.popToRoot();
+    console.log('hizo refresh', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
   }
 
   dataTake() {
